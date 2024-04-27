@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload for Tumor Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .upload-label {
+            background-color: #414241;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        #submit-btn {
+            background-color: #343534;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #image-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #mask-image {
+            max-width: 300px;
+            margin: 10px auto;
+            display: block;
+        }
+
+        #tumor-present {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Browse for the image</h1>
+        <form id="upload-file" method="post" enctype="multipart/form-data">
+            <label for="imageUpload" class="upload-label">Choose image...</label>
+            <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+            <span id="filename"></span>
+            <button type="submit" id="submit-btn">Submit</button>
+        </form>
+
+        {% if tumor_present is not none %}
+            <div id="image-container">
+                {% if mask_path %}
+                    <img src="{{ mask_path }}" alt="Mask" id="mask-image">
+                {% endif %}
+                <p id="tumor-present">
+                    {% if tumor_present %}
+                        Tumor present in this Mask 
+                    {% else %}
+                        No tumor detected YOU ARE FINE 
+                    {% endif %}
+                </p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

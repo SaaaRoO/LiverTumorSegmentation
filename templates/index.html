@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Therapist Buddy</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Therapist Buddy</a>
+      <div class="toggle" onclick="toggleMenu()"></div>
+      <ul class="menu">
+        <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+        <li><a href="#Info" onclick="toggleMenu()">Informations</a></li>
+      </ul>
+    </header>
+
+    <section class="banner" id="home">
+      <div class="textBx">
+        <h2>Welcome To Therapist Buddy<br /><span>Liver Tumor Detection</span></h2>
+        <h3>Liver Tumor Website</h3>
+        <a href="#about" class="btn">About</a>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="heading">
+        <h2>About</h2>
+      </div>
+      <div class="content">
+        <div class="contentBx w50">
+          <h3>Dr. Mohamed Allam.</h3>
+          <p>
+            The idea for this project was inspired by my uncle, Dr. Mohamed Allam, who died of cirrhosis of the liver. He was devoid of one of the greatest personalities I ever met, the kindest and noblest not only as an uncle, but as a brother and a doctor, so I wanted to make an impact in the fight against this disease.
+          </p>
+        </div>
+        <div class="w50">
+          <img src="img/7056cb7e-a6b5-4f10-9e52-1c2f003012f7.jpg" class="img" />
+        </div>
+      </div>
+    </section>
+
+    <section class="Info" id="Info">
+      <div class="heading white">
+        <h2>Our Informations</h2>
+        <p>all informations about liver tumors</p>
+      </div>
+      <div class="content">
+        <div class="InfoBx">
+          <h2>The Dangers of Liver Tumors</h2>
+          <p>
+            Liver tumors pose a significant threat to human health, with potentially severe consequences if left undiagnosed and untreated. These tumors can be either benign or malignant, with the latter, particularly hepatocellular carcinoma (HCC), being a leading cause of cancer-related mortality worldwide. Liver tumors often develop silently, without obvious symptoms in the early stages, making early detection challenging. However, as they progress, they can cause symptoms such as abdominal pain, jaundice, unexplained weight loss, and fatigue. Without timely intervention, liver tumors can metastasize to other organs, further complicating treatment and reducing the chances of successful outcomes.
+          </p>
+        </div>
+        <div class="InfoBx">
+          <h2>The Importance of Early Detection</h2>
+          <p>
+            Early detection of liver tumors is paramount for improving patient outcomes and increasing the effectiveness of treatment strategies. Detecting liver tumors at an early stage allows for more options in terms of treatment modalities, including surgical resection, ablation therapies, and liver transplantation. Moreover, early diagnosis can significantly improve the prognosis for patients, as it increases the likelihood of successful treatment and long-term survival. Regular screening and diagnostic imaging techniques, combined with awareness of risk factors such as chronic liver disease, alcohol consumption, and viral hepatitis infections, play a crucial role in identifying liver tumors at an early, more manageable stage.
+          </p>
+        </div>
+        <div class="InfoBx">
+          <h2>The Role of Artificial Intelligence in Liver Tumor Detection
+            <p>Artificial intelligence (AI) techniques, particularly deep learning algorithms, have emerged as promising tools for the early detection and diagnosis of liver tumors. These AI models analyze medical imaging data, such as computed tomography (CT) scans and magnetic resonance imaging (MRI), to identify suspicious lesions and characterize their features. By leveraging large datasets and complex pattern recognition algorithms, AI algorithms can assist radiologists in interpreting imaging studies more accurately and efficiently. Additionally, AI-based decision support systems can help prioritize high-risk cases for further evaluation and guide clinicians in developing personalized treatment plans. The integration of AI technology into liver tumor detection workflows has the potential to improve diagnostic accuracy, reduce interpretation errors, and ultimately enhance patient care and outcomes.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      window.addEventListener("scroll", function () {
+        var header = document.querySelector("header");
+        header.classList.toggle("sticky", window.scrollY > 0);
+      });
+
+      function toggleMenu() {
+        var menuToggle = document.querySelector(".toggle");
+        var menu = document.querySelector(".menu");
+        menuToggle.classList.toggle("active");
+        menu.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>

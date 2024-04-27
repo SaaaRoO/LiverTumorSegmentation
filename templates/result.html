@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .result-message {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .tumor-present {
+            color: red;
+        }
+
+        .no-tumor-detected {
+            color: green;
+        }
+
+        #tumor-mask {
+            max-width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Result</h1>
+        <div class="result-message">
+            {% if tumor_present is not none %}
+                {% if tumor_present %}
+                    <p class="tumor-present">Tumor present</p>
+                {% else %}
+                    <p class="no-tumor-detected">No tumor detected, you are fine</p>
+                {% endif %}
+            {% else %}
+                <p>Result not available</p>
+            {% endif %}
+        </div>
+        {% if tumor_mask_url %}
+            <img src="{{ tumor_mask_url }}" alt="Tumor Mask" id="tumor-mask">
+        {% endif %}
+    </div>
+</body>
+</html>
